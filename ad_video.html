@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}
+افزودن ویدیو
+{% endblock %}
+
+{% block content %}
+
+<div class="admin-form-page">
+
+    <div class="admin-form-card">
+
+        <h1>
+
+            🎥 افزودن ویدیو
+
+        </h1>
+
+        <form method="POST">
+
+            <input
+            type="text"
+            name="title"
+            placeholder="عنوان ویدیو"
+            required>
+
+            <input
+            type="text"
+            name="filename"
+            placeholder="https://www.aparat.com/v/xxxxx"
+            required>
+
+            <select
+            name="course_id"
+            required>
+
+                {% for course in courses %}
+
+                <option
+                value="{{ course.id }}">
+
+                    {{ course.title }}
+
+                </option>
+
+                {% endfor %}
+
+            </select>
+
+            <button
+            type="submit">
+
+                ثبت ویدیو
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
