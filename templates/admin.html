@@ -1,1 +1,136 @@
+{% extends "layout.html" %}
 
+{% block title %}
+پنل مدیریت
+{% endblock %}
+
+{% block content %}
+
+<div class="admin-page">
+
+    <h1>
+
+        👑 پنل مدیریت
+
+    </h1>
+
+    <div class="admin-stats">
+
+        <div class="admin-card">
+
+            <h2>
+
+                {{ total_users }}
+
+            </h2>
+
+            <p>
+
+                کاربران
+
+            </p>
+
+        </div>
+
+        <div class="admin-card">
+
+            <h2>
+
+                {{ total_videos }}
+
+            </h2>
+
+            <p>
+
+                ویدیوها
+
+            </p>
+
+        </div>
+
+        <div class="admin-card">
+
+            <h2>
+
+                {{ total_quizzes }}
+
+            </h2>
+
+            <p>
+
+                آزمون‌ها
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="admin-buttons">
+
+        <a
+        href="/admin/add-video"
+        class="admin-button">
+
+            🎥 افزودن ویدیو
+
+        </a>
+
+        <a
+        href="/admin/add-quiz"
+        class="admin-button">
+
+            📝 افزودن آزمون
+
+        </a>
+
+        <a
+        href="/users"
+        class="admin-button">
+
+            👥 کاربران
+
+        </a>
+
+    </div>
+
+    <div class="course-list">
+
+        {% for course in courses %}
+
+        <div class="course-admin-card">
+
+            {{ course.title }}
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+<h2>آزمون‌ها</h2>
+
+<div class="course-list">
+
+    {% for quiz in quizzes %}
+
+    <div class="course-admin-card">
+
+        <b>{{ quiz.title }}</b>
+
+        <br><br>
+
+        <a href="/admin/add-question/{{ quiz.id }}"
+           class="admin-button">
+
+            ➕ افزودن سوال
+
+        </a>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+</div>
+
+{% endblock %}
