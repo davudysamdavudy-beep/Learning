@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block title %}
+پیشرفت من
+{% endblock %}
+
+{% block content %}
+
+<div class="progress-page">
+
+    <h1>
+
+        📊 ارزیابی پیشرفت
+
+    </h1>
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+
+            <h2>
+                {{ total_exams }}
+            </h2>
+
+            <p>
+                تعداد آزمون‌ها
+            </p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>
+                {{ average }}
+            </h2>
+
+            <p>
+                میانگین نمرات
+            </p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>
+                {{ best_score }}
+            </h2>
+
+            <p>
+                بهترین نمره
+            </p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>
+                {{ last_score }}
+            </h2>
+
+            <p>
+                آخرین نمره
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="progress-box">
+
+        <h2>
+
+            روند پیشرفت
+
+        </h2>
+
+        <p>
+
+            این بخش در نسخه حرفه‌ای نمودار رشد دانش‌آموز را نمایش خواهد داد.
+
+        </p>
+
+    </div>
+
+</div>
+
+{% endblock %}
