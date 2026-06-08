@@ -1,0 +1,843 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Vazirmatn',sans-serif;
+
+    min-height:100vh;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    135deg,
+    #020617,
+    #0f172a,
+    #111827,
+    #1e1b4b
+    );
+
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+}
+
+/* پس زمینه */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-1;
+}
+
+.orb{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    animation:float 8s infinite ease-in-out;
+}
+
+.orb1{
+
+    width:280px;
+    height:280px;
+
+    background:#00ffff;
+
+    top:5%;
+    left:5%;
+}
+
+.orb2{
+
+    width:320px;
+    height:320px;
+
+    background:#9333ea;
+
+    right:5%;
+    top:40%;
+}
+
+.orb3{
+
+    width:250px;
+    height:250px;
+
+    background:#2563eb;
+
+    bottom:5%;
+    left:35%;
+}
+
+@keyframes float{
+
+    0%,100%{
+
+        transform:
+        translateY(0px);
+    }
+
+    50%{
+
+        transform:
+        translateY(-40px);
+    }
+}
+
+/* نوار بالا */
+
+.main-navbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 40px;
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.1);
+}
+
+.logo{
+
+    font-size:30px;
+
+    font-weight:800;
+
+    color:#00ffff;
+
+    text-shadow:
+    0 0 10px cyan,
+    0 0 30px cyan;
+}
+
+nav{
+
+    display:flex;
+
+    gap:15px;
+}
+
+nav a{
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:12px;
+
+    transition:.3s;
+}
+
+nav a:hover{
+
+    background:
+    rgba(255,255,255,.1);
+}
+
+/* پیام ها */
+
+.flash-message{
+
+    width:90%;
+
+    max-width:700px;
+
+    margin:20px auto;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    background:
+    rgba(0,255,255,.1);
+
+    border:
+    1px solid cyan;
+
+    text-align:center;
+}
+
+/* صفحه اصلی */
+
+.hero-section{
+
+    min-height:80vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:30px;
+}
+
+.hero-title{
+
+    font-size:65px;
+
+    margin-bottom:20px;
+
+    text-shadow:
+    0 0 15px cyan,
+    0 0 40px cyan;
+}
+
+.hero-text{
+
+    font-size:22px;
+
+    color:#d1d5db;
+
+    line-height:2;
+}
+
+.hero-buttons{
+
+    margin-top:35px;
+}
+
+.neon-button{
+
+    display:inline-block;
+
+    margin:10px;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    border:2px solid cyan;
+
+    color:white;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.neon-button:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+    0 0 20px cyan,
+    0 0 50px cyan;
+}
+
+.cards-section{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+    padding-bottom:50px;
+}
+
+.home-card{
+
+    padding:30px;
+
+    border-radius:25px;
+
+    backdrop-filter:blur(15px);
+
+    background:
+    rgba(255,255,255,.05);
+
+    border:
+    1px solid rgba(0,255,255,.3);
+
+    transition:.3s;
+}
+
+.home-card:hover{
+
+    transform:
+    translateY(-8px);
+
+    box-shadow:
+    0 0 25px cyan;
+}
+
+.home-card h2{
+
+    margin-bottom:15px;
+}
+/* فرم ها */
+
+.auth-container,
+.admin-form-page{
+
+    min-height:80vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+}
+
+.auth-card,
+.admin-form-card{
+
+    width:100%;
+
+    max-width:600px;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:
+    rgba(255,255,255,.05);
+
+    backdrop-filter:blur(15px);
+
+    border:
+    1px solid rgba(0,255,255,.3);
+}
+
+.auth-card h1,
+.admin-form-card h1{
+
+    text-align:center;
+
+    margin-bottom:25px;
+}
+
+.auth-card input,
+.admin-form-card input,
+.admin-form-card textarea,
+.admin-form-card select{
+
+    width:100%;
+
+    padding:15px;
+
+    margin:10px 0;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-family:inherit;
+}
+
+.auth-card button,
+.admin-form-card button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:bold;
+}
+
+.auth-link{
+
+    text-align:center;
+
+    margin-top:20px;
+}
+
+/* داشبورد */
+
+.dashboard-header{
+
+    text-align:center;
+
+    padding:40px 20px;
+}
+
+.course-grid{
+
+    width:92%;
+
+    max-width:1300px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+}
+
+.course-card{
+
+    padding:25px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    background:
+    rgba(255,255,255,.05);
+
+    border:
+    1px solid rgba(0,255,255,.3);
+
+    transition:.3s;
+}
+
+.course-card:hover{
+
+    transform:
+    translateY(-8px);
+
+    box-shadow:
+    0 0 25px cyan;
+}
+
+.course-icon{
+
+    font-size:45px;
+
+    margin-bottom:15px;
+}
+
+.course-name{
+
+    font-size:22px;
+
+    font-weight:bold;
+}
+
+.dashboard-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    padding:40px;
+}
+
+.big-button{
+
+    padding:18px 30px;
+
+    border-radius:20px;
+
+    color:white;
+
+    border:1px solid cyan;
+}
+
+/* صفحه دوره */
+
+.course-header{
+
+    text-align:center;
+
+    padding:40px 20px;
+}
+
+.course-sections{
+
+    width:92%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:25px;
+}
+
+.section-box{
+
+    padding:25px;
+
+    border-radius:25px;
+
+    background:
+    rgba(255,255,255,.05);
+}
+
+.video-item,
+.quiz-item{
+
+    display:block;
+
+    margin-top:15px;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    color:white;
+}
+
+/* ویدیو */
+
+.video-page{
+
+    padding:40px;
+}
+
+.video-container{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    text-align:center;
+}
+
+.video-player{
+
+    width:100%;
+
+    border-radius:20px;
+
+    margin-top:25px;
+}
+
+/* آزمون */
+
+.quiz-page{
+
+    padding:30px;
+}
+
+.quiz-card{
+
+    max-width:1000px;
+
+    margin:auto;
+}
+
+#timer{
+
+    text-align:center;
+
+    font-size:26px;
+
+    margin:20px 0;
+
+    color:#00ffff;
+}
+
+.question-box{
+
+    padding:25px;
+
+    margin-bottom:20px;
+
+    border-radius:20px;
+
+    background:
+    rgba(255,255,255,.05);
+}
+
+.question-image{
+
+    width:100%;
+
+    max-height:300px;
+
+    object-fit:contain;
+
+    margin-bottom:15px;
+
+    border-radius:15px;
+}
+
+.question-box label{
+
+    display:block;
+
+    margin-top:12px;
+}
+
+.submit-quiz-btn{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:15px;
+
+    cursor:pointer;
+}
+
+/* نتیجه آزمون */
+
+.result-page{
+
+    min-height:80vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+.result-card{
+
+    text-align:center;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    background:
+    rgba(255,255,255,.05);
+}
+
+.score-circle{
+
+    width:180px;
+
+    height:180px;
+
+    margin:25px auto;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:40px;
+
+    border:4px solid cyan;
+}
+
+.back-dashboard{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    padding:15px 25px;
+
+    border-radius:12px;
+
+    border:1px solid cyan;
+
+    color:white;
+}
+
+/* پیشرفت */
+
+.progress-page{
+
+    padding:40px;
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+}
+
+.stat-card{
+
+    padding:25px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    background:
+    rgba(255,255,255,.05);
+}
+
+.progress-box{
+
+    margin-top:30px;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    background:
+    rgba(255,255,255,.05);
+}
+
+/* مدیریت */
+
+.admin-page{
+
+    padding:40px;
+}
+
+.admin-stats{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+}
+
+.admin-card{
+
+    text-align:center;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    background:
+    rgba(255,255,255,.05);
+}
+
+.admin-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin:30px 0;
+}
+
+.admin-button{
+
+    padding:15px 25px;
+
+    border-radius:15px;
+
+    color:white;
+
+    border:1px solid cyan;
+}
+
+.course-admin-card{
+
+    padding:15px;
+
+    margin-top:10px;
+
+    border-radius:12px;
+
+    background:
+    rgba(255,255,255,.05);
+}
+
+/* جدول کاربران */
+
+.users-table{
+
+    overflow-x:auto;
+
+    margin-top:25px;
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+th,
+td{
+
+    padding:15px;
+
+    text-align:center;
+}
+
+tr{
+
+    border-bottom:
+    1px solid rgba(255,255,255,.1);
+}
+
+/* موبایل */
+
+@media(max-width:768px){
+
+    .hero-title{
+
+        font-size:40px;
+    }
+
+    .course-sections{
+
+        grid-template-columns:
+        1fr;
+    }
+
+    .main-navbar{
+
+        flex-direction:column;
+
+        gap:15px;
+    }
+
+    nav{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+    }
+}
