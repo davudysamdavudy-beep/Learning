@@ -1,0 +1,149 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{{ quiz.title }}
+{% endblock %}
+
+{% block content %}
+
+<div class="quiz-page">
+
+    <div class="quiz-card">
+
+        <h1>
+
+            {{ quiz.title }}
+
+        </h1>
+
+        <div id="timer">
+
+            زمان باقی‌مانده:
+            <span id="time">
+                05:00
+            </span>
+
+        </div>
+
+        <form
+        method="POST"
+        action="/submit-quiz/{{ quiz.id }}"
+        id="quizForm">
+
+            {% for question in questions %}
+
+            <div class="question-box">
+
+                {% if question.image %}
+
+                <img
+                src="{{ question.image }}"
+                class="question-image">
+
+                {% endif %}
+
+                <h3>
+
+                    {{ loop.index }}.
+                    {{ question.question_text }}
+
+                </h3>
+
+                <label>
+
+                    <input
+                    type="radio"
+                    name="question_{{ question.id }}"
+                    value="1">
+
+                    {{ question.option1 }}
+
+                </label>
+
+                <label>
+
+                    <input
+                    type="radio"
+                    name="question_{{ question.id }}"
+                    value="2">
+
+                    {{ question.option2 }}
+
+                </label>
+
+                <label>
+
+                    <input
+                    type="radio"
+                    name="question_{{ question.id }}"
+                    value="3">
+
+                    {{ question.option3 }}
+
+                </label>
+
+                <label>
+
+                    <input
+                    type="radio"
+                    name="question_{{ question.id }}"
+                    value="4">
+
+                    {{ question.option4 }}
+
+                </label>
+
+            </div>
+
+            {% endfor %}
+
+            <button
+            type="submit"
+            class="submit-quiz-btn">
+
+                ثبت آزمون
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script>
+
+let seconds = 300;
+
+const timer = document.getElementById(
+    "time"
+);
+
+setInterval(function(){
+
+    let min = Math.floor(
+        seconds / 60
+    );
+
+    let sec = seconds % 60;
+
+    timer.innerText =
+        String(min).padStart(2,"0")
+        + ":" +
+        String(sec).padStart(2,"0");
+
+    if(seconds <= 0){
+
+        document.getElementById(
+            "quizForm"
+        ).submit();
+
+    }
+
+    seconds--;
+
+},1000);
+
+</script>
+
+{% endblock %}
