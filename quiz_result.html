@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block title %}
+نتیجه آزمون
+{% endblock %}
+
+{% block content %}
+
+<div class="result-page">
+
+    <div class="result-card">
+
+        <h1>
+
+            🎉 نتیجه آزمون
+
+        </h1>
+
+        <div class="score-circle">
+
+            {{ score }}%
+
+        </div>
+
+        <h2>
+
+            نمره شما:
+            {{ score }}
+
+        </h2>
+        <h3>
+
+    پاسخ صحیح:
+    {{ correct }} از {{ total }}
+
+</h3>
+
+        {% if score >= 80 %}
+
+        <div class="result-message success">
+
+            عالی بود 🌟
+
+        </div>
+
+        {% elif score >= 50 %}
+
+        <div class="result-message warning">
+
+            خوب بود 👍
+
+        </div>
+
+        {% else %}
+
+        <div class="result-message danger">
+
+            نیاز به تمرین بیشتر داری 📚
+
+        </div>
+
+        {% endif %}
+
+        <a
+        href="/dashboard"
+        class="back-dashboard">
+
+            بازگشت به داشبورد
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}
