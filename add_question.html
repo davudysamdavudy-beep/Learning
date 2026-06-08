@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block title %}
+افزودن سوال
+{% endblock %}
+
+{% block content %}
+
+<div class="admin-form-page">
+
+    <div class="admin-form-card">
+
+        <h1>
+
+            ❓ افزودن سوال
+
+        </h1>
+
+        <form method="POST">
+
+            <input
+            type="text"
+            name="image"
+            placeholder="آدرس تصویر سوال">
+
+            <textarea
+            name="question"
+            placeholder="متن سوال"
+            required></textarea>
+
+            <input
+            type="text"
+            name="option1"
+            placeholder="گزینه 1"
+            required>
+
+            <input
+            type="text"
+            name="option2"
+            placeholder="گزینه 2"
+            required>
+
+            <input
+            type="text"
+            name="option3"
+            placeholder="گزینه 3"
+            required>
+
+            <input
+            type="text"
+            name="option4"
+            placeholder="گزینه 4"
+            required>
+
+            <select
+            name="correct_answer"
+            required>
+
+                <option value="1">
+                    گزینه 1
+                </option>
+
+                <option value="2">
+                    گزینه 2
+                </option>
+
+                <option value="3">
+                    گزینه 3
+                </option>
+
+                <option value="4">
+                    گزینه 4
+                </option>
+
+            </select>
+
+            <button
+            type="submit">
+
+                ثبت سوال
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
