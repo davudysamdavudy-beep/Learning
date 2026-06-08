@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{{ course_name }}</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="background">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+</div>
+
+<header class="topbar">
+
+    <h1 class="logo">
+        {{ course_name }}
+    </h1>
+
+    <a href="/dashboard" class="logout-btn">
+        بازگشت
+    </a>
+
+</header>
+
+<div class="page-content">
+
+    <div class="glass-card">
+
+        <h2>
+            ویدیوهای آموزشی
+        </h2>
+
+        {% if videos %}
+
+            {% for video in videos %}
+
+                <div class="video-card">
+
+                    <div class="video-title">
+                        🎥 {{ video }}
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <div class="empty-box">
+
+                هنوز ویدیویی برای این دوره اضافه نشده است.
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

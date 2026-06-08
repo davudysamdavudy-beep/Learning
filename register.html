@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ثبت نام</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="background">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+</div>
+
+<div class="form-container">
+
+    <div class="glass-card">
+
+        <h1 class="page-title">
+            ثبت نام دانش‌آموز
+        </h1>
+
+        <form method="POST">
+
+            <input
+                type="text"
+                name="username"
+                placeholder="نام کاربری"
+                required
+                class="input-box">
+
+            <input
+                type="password"
+                name="password"
+                placeholder="رمز عبور"
+                required
+                class="input-box">
+
+            <button class="submit-btn">
+                ثبت نام
+            </button>
+
+        </form>
+
+        <a href="/" class="back-link">
+            بازگشت به صفحه اصلی
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

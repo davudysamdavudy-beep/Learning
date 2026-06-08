@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Academy</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="background">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+</div>
+
+<nav class="navbar">
+    <h1 class="logo">🚀 Neon Academy</h1>
+</nav>
+
+<section class="hero">
+
+    <h1 class="main-title">
+        آموزش حرفه‌ای روبیک و علوم
+    </h1>
+
+    <p class="subtitle">
+        روبیک 2×2، 3×3، 4×4، پیرامینکس
+        <br>
+        فیزیک، ریاضی و شیمی دبیرستان
+    </p>
+
+    <div class="buttons">
+
+        <a href="/register" class="btn neon-btn">
+            ثبت نام
+        </a>
+
+        <a href="/login" class="btn neon-btn">
+            ورود دانش‌آموز
+        </a>
+
+        <a href="/admin-login" class="btn admin-btn">
+            ورود مدیر
+        </a>
+
+    </div>
+
+</section>
+
+<section class="features">
+
+    <div class="feature-card">
+        <h2>🧩 آموزش روبیک</h2>
+        <p>
+            آموزش کامل روبیک‌های مختلف
+        </p>
+    </div>
+
+    <div class="feature-card">
+        <h2>📚 آموزش دروس</h2>
+        <p>
+            فیزیک، ریاضی و شیمی
+        </p>
+    </div>
+
+    <div class="feature-card">
+        <h2>📝 آزمون آنلاین</h2>
+        <p>
+            سنجش و پیشرفت دانش‌آموزان
+        </p>
+    </div>
+
+</section>
+
+</body>
+</html>

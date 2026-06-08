@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>داشبورد دانش‌آموز</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="background">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+</div>
+
+<header class="topbar">
+
+    <h1 class="logo">
+        🚀 Neon Academy
+    </h1>
+
+    <a href="/logout" class="logout-btn">
+        خروج
+    </a>
+
+</header>
+
+<section class="dashboard-header">
+
+    <h1>
+        دوره‌های آموزشی
+    </h1>
+
+    <p>
+        روی هر دوره کلیک کن تا وارد بخش آموزش بشی
+    </p>
+
+</section>
+
+<div class="courses-grid">
+
+{% for course in courses %}
+
+<a
+href="/course/{{ course.id }}"
+class="course-card">
+
+    <div class="course-title">
+
+        {{ course.title }}
+
+    </div>
+
+    <div class="course-enter">
+
+        ورود به دوره 🚀
+
+    </div>
+
+</a>
+
+{% endfor %}
+
+</div>
+
+</body>
+</html>
