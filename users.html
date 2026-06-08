@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block title %}
+کاربران
+{% endblock %}
+
+{% block content %}
+
+<div class="users-page">
+
+    <h1>
+
+        👥 کاربران سایت
+
+    </h1>
+
+    <div class="users-table">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        شناسه
+                    </th>
+
+                    <th>
+                        نام کاربری
+                    </th>
+
+                    <th>
+                        نقش
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {% for user in users %}
+
+                <tr>
+
+                    <td>
+                        {{ user.id }}
+                    </td>
+
+                    <td>
+                        {{ user.username }}
+                    </td>
+
+                    <td>
+
+                        {% if user.is_admin %}
+
+                        مدیر
+
+                        {% else %}
+
+                        دانش‌آموز
+
+                        {% endif %}
+
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}
