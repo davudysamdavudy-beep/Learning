@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+دوره‌ها
+{% endblock %}
+
+{% block content %}
+
+<div class="courses-page">
+
+    <h1>
+
+        📚 همه دوره‌ها
+
+    </h1>
+
+    <div class="course-grid">
+
+        {% for course in courses %}
+
+        <div class="course-card">
+
+            <div class="course-icon">
+
+                🚀
+
+            </div>
+
+            <div class="course-name">
+
+                {{ course.title }}
+
+            </div>
+
+            <a
+            href="/course/{{ course.id }}"
+            class="course-link">
+
+                ورود به دوره
+
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}
